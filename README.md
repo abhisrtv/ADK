@@ -136,12 +136,55 @@ cd testAgent
 adk web
 adk run secondAgent
 ```
+## 🚀 Deploy ADK Agent to Agent Engine
+
+### Supported Lab
+- Deploy ADK agents to Agent Engine  
+  https://www.skills.google/catalog_lab/32019
+
+### Qwikstart Guide
+- Agent Engine Quickstart (ADK)  
+  https://docs.cloud.google.com/agent-builder/agent-engine/quickstart-adk
 
 ---
 
-## 📌 Git Ignore
-```gitignore
-.env
+### Step 1: Open Agent Engine
+- Go to **Agent Engine** in Google Cloud Console
+
+---
+
+### Step 2: Create Cloud Storage Bucket
+```text
+Bucket name: adk_agent_deploy002xxxxx
 ```
+
+---
+
+### Step 3: Update `.env` File for Deployment
+```env
+#GOOGLE_GENAI_USE_VERTEXAI=0
+#GOOGLE_API_KEY=AIzaSyBxxxxxxxxxxxxxxxx
+GOOGLE_CLOUD_PROJECT=project-xxxxxxxxxxxxxxxxx
+GOOGLE_CLOUD_REGION=us-central1
+```
+
+---
+
+### Step 4: Check Deploy Command Help
+```bash
+adk deploy --help
+```
+
+---
+
+### Step 5: Deploy Agent to Agent Engine
+```bash
+adk deploy agent_engine firstAgent   --display_name="currency_agent_v2"   --project="project-ee7cb7bb-2d31-45e1-83d"   --region="us-central1"
+```
+
+---
+
+### Step 6: Call Deployed Agent
+- Run a Python script to invoke the deployed Agent Engine endpoint
 
 ---
