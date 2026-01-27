@@ -82,7 +82,7 @@ python -m venv adk
 
 ### Step 2: Install Google ADK
 ```powershell
-pip install google-adk
+pip install --upgrade  google-cloud-aiplatform[agent_engines,adk]>=1.112
 ```
 
 ### Step 3: Create Agent Folder
